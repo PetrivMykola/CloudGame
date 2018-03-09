@@ -9,34 +9,23 @@ public class Solution {
         int jump = 0;
 
         for (int i = 0; i < lenght & (i + 2) <= lenght; ) {
-            if (c[i + 1] == 0 & c[i + 2] != 0 ) {
+
+            if (c[i + 2] == 0) {
+                jump++;
+                i+=2;
+                continue;
+
+            } else if (c[i + 1] == 0) {
                 jump++;
                 i++;
                 continue;
 
-            } else if (c[i + 2] == 0) {
-                jump++;
-                i += 2;
-                continue;
             } else return -1;
+
         }
 
         return jump;
     }
-
-
-    //        int lenght = c.length - 1;
-//        int zero = 0;
-//        int jump = 0;
-//        for (int i = 0; i < lenght; i++) {
-//            if (c[i] == 1) {
-//                jump = jump + zero / 2 + 1;
-//                zero = 0;
-//            } else zero++;
-//        }
-//        return jump += zero / 2;
-//    }
-
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
